@@ -1,5 +1,5 @@
 Package: RGoogleDocs
-Version: 0.7-0
+Version: 0.8-0
 Title:  Primitive interface to Google Documents from R
 Description: This package provides an initial, elementary
  interface to Google's Document API for word processing and spreadsheet documents.
@@ -18,3 +18,4 @@ Depends: methods
 Imports: RCurl, XML
 Author: Duncan Temple Lang
 Maintainer: Duncan Temple Lang <duncan@r-project.org>
+Contributor: Neal Fultz <nfultz@gmail.com>
