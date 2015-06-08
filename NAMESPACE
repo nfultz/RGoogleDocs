@@ -1,5 +1,6 @@
 import(RCurl)
 import(XML)
+import(rjson)
 
 export(getGoogleDocsConnection, getGoogleAuth)
 export(comments, images, footnotes, sections, readDoc)

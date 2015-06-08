@@ -15,7 +15,7 @@ Note:  There is now R documentation for the functions in the package.
   interaction with Google's API.
 License: BSD
 Depends: methods
-Imports: RCurl, XML
+Imports: RCurl, XML, rjson
 Author: Duncan Temple Lang
 Maintainer: Duncan Temple Lang <duncan@r-project.org>
 Contributor: Neal Fultz <nfultz@gmail.com>
