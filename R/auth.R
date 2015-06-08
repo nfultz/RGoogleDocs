@@ -67,8 +67,10 @@ function(con)
 
 getGoogleAuth =
 function(login = getOption("GoogleDocsPassword"), password, service = "writely", appID = "R-GoogleDocs-0.1", error = TRUE,
-          ..., curl = getCurlHandle(...))
+          ..., curl = getCurlHandle(...), method = "OAuth2")
 {
+  if(method == 'OAuth2') return(getGoogleOAuth2(service=service, ...))
+  
   if(!missing(login) && missing(password) && length(names(login)) > 0 ) {
     password = login
     login = names(password)
@@ -176,9 +178,11 @@ function(auth, ...)
   if(is(auth, "AuthenticatedGoogleDocumentsConnection")) {
     auth = auth@auth
   }
-  if(is(auth, "character") && length(auth) > 0)
-    h['Authorization'] = paste("GoogleLogin auth=", auth, sep = "")      
-
+#   if(is(auth, "character") && length(auth) > 0)
+#     h['Authorization'] = paste("GoogleLogin auth=", auth, sep = "")      
+  h = append(h, auth)
+  
+  
   list(httpheader = h, ...)
 }
 
